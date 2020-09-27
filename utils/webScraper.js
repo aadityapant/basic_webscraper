@@ -3,6 +3,7 @@ const request = require('request-promise');
 
 const webScrapper = async (url) => {
   try {
+    // request to the service/website
     const response = await request({
       uri: url,
       method: 'GET',
@@ -15,7 +16,7 @@ const webScrapper = async (url) => {
       gzip: true,
     });
     const $ = cheerio.load(response);
-
+    // Finding the title and the first occurence of every tag to get their value
     const title = $('title').first().text().trim();
     const subheader = $('h1').first().text().trim();
     const date = $('time').text().trim();

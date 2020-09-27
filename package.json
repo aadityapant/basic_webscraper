@@ -10,11 +10,9 @@
   "author": "Aditya Pant",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0",
     "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "json2csv": "^5.0.3",
     "open-graph-scraper": "^4.6.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
