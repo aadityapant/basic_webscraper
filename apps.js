@@ -5,6 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.route('/').post(route);
+// app.route('/').get(route.getReturn);
+app.route('/').post(route.scrape);
 
 module.exports = app;
