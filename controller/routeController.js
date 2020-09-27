@@ -3,10 +3,13 @@ const webScraper = require('../utils/webScraper');
 
 module.exports = async (req, res, next) => {
   const fullUrl = req.body.url;
+
+  //Checking if url is defined
   if (fullUrl) {
     const options = { url: fullUrl };
     let results;
     try {
+      //Using ogs to check and find og parameter
       results = await ogs(options);
     } catch (err) {
       return res.status(400).json({
@@ -21,6 +24,7 @@ module.exports = async (req, res, next) => {
         body: results.result,
       });
     } else {
+      // If og parameters arent present in the response
       results = await webScraper(fullUrl);
 
       if (results.error) {
