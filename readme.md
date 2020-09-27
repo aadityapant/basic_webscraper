@@ -2,9 +2,9 @@
 
 Built using libraries: express.js, cheerio, request-promise, open-graph-scraper
 
-Send a post request to the root address with the url of the website to be scraped.
+Send a POST request to the root address with the url of the website to be scraped.
 
-# req in json with format :
+# request(POST ONLY) in json with format :
 
 {
 "url": "wetsite_url"
