@@ -1,7 +1,7 @@
 const ogs = require('open-graph-scraper');
 const webScraper = require('../utils/webScraper');
 
-module.exports = async (req, res, next) => {
+exports.scrape = async (req, res, next) => {
   const fullUrl = req.body.url;
 
   //Checking if url is defined
@@ -45,4 +45,8 @@ module.exports = async (req, res, next) => {
       message: 'url NOT found. Please specify a url',
     });
   }
+};
+
+exports.getReturn = (req, res, next) => {
+  res.send('Only "POST" requests are availble');
 };
